@@ -4,7 +4,7 @@
   "description": "Test for Endouble",
   "scripts": {
     "dev": "gulp",
-    "prod": "node app.js"
+    "prod": "node server.js"
   },
   "author": "Zar Zakharov <severenit@gmail.com>",
   "license": "ISC",
