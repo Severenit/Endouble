@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Test for Endouble",
   "scripts": {
-    "dev": "mkdir uploads && gulp",
-    "prod": "mkdir uploads && node server.js"
+    "dev": "gulp",
+    "prod": "node server.js"
   },
   "author": "Zar Zakharov <severenit@gmail.com>",
   "license": "ISC",
