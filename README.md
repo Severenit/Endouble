@@ -13,7 +13,10 @@ Therefore, make sure that you have enabled which allows the use of your e-mail f
 - Then, navigate in the browser the link http://localhost:3000/
 - Enjoy!
 ## Developer Mode
-If you want to fix something in your code or see how to gather the project, you should enter the command `npm run dev`.
+If you want to fix something in your code or see how to gather the project, you should enter the command 
+```
+npm run dev
+```
 Don't forget in your terminal set your Google email and password, to connect to your mail when a letter is sent.
 ## Technology
 - Node.js
