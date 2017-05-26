@@ -1,0 +1,114 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  @include MuseoSans();
+  background-color: $color--light-grey;
+  font-size: 13px;
+}
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  @include clearfix;
+}
+legend {
+  display: block;
+  @include clearfix;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  margin-top: 0;
+  padding: 0;
+  line-height: 1;
+}
+a {
+  color: $color--grey;
+  text-decoration: none;
+  transition: all linear .1s;
+  &:hover {
+    color: $color--dark-grey;
+  }
+}
+p {
+  &.lead {
+    font-size: 16px;
+  }
+}
+.wrap {
+  max-width: 1024px;
+  padding: 38px;
+  width: 100%;
+  margin: 0 auto;
+  @include tablet {
+    padding: 38px 20px 20px;
+  }
+  @include phone {
+    padding: 38px 14px 0;
+  }
+}
+.h2 {
+  @include YanoneKaffeesatz(bold);
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  @include tablet {
+    font-size: 40px;
+  }
+  @include phone {
+    text-align: center;
+  }
+}
+.row {
+  @include clearfix;
+  position: relative;
+}
+.col-6 {
+  width: 50% !important;
+  float: left;
+  @include phone {
+    width: 100% !important;
+  }
+}
+input,
+textarea,
+button,
+.button {
+  outline: none !important;
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none !important;
+  }
+}
+.button {
+  background-color: #005c9d;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFFFFF;
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  min-width: 160px;
+  line-height: 40px;
+  border: 1px solid #005c9d;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: all linear .2s;
+  &:hover {
+    background-color: #004B7F;
+  }
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    background-color: #004B7F;
+  }
+}

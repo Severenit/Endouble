@@ -1,0 +1,31 @@
+.faq {
+  max-width: 1024px;
+  padding: 68px 38px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  @include phone {
+    padding: 38px 16px;
+  }
+  &__wrap {
+    background-color: #f6f6f6;
+    padding: 36px 0;
+    .col-6 {
+      padding-left: 24px;
+      @include phone {
+        padding-right: 24px;
+        &:first-child {
+          margin-bottom: 26px;
+        }
+      }
+    }
+    p, ul {
+      color: #666666;
+      line-height: 18px;
+    }
+    ul {
+      padding: 0 0 0 17px;
+    }
+  }
+}

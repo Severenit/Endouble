@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'YanoneKaffeesatz-Bold';
+  src: url('YanoneKaffeesatz-Bold.eot?#iefix') format('embedded-opentype'),  url('YanoneKaffeesatz-Bold.otf')  format('opentype'),
+	     url('YanoneKaffeesatz-Bold.woff') format('woff'), url('YanoneKaffeesatz-Bold.ttf')  format('truetype'), url('YanoneKaffeesatz-Bold.svg#YanoneKaffeesatz-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

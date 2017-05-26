@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(href='css/main.css', rel='stylesheet', type='text/css')
+        link(href='assets/jquery-ui.css', rel='stylesheet', type='text/css')
+        title Purchasing assistant
+    body
+        include includes/_header.jade
+        include includes/_parallax-head.jade
+        section.wrap
+            h2.h2
+                | Apply for the position of Purchasing assistant
+            include includes/_form.jade
+        include includes/_faq.jade
+        include includes/_footer.jade
+        .notification
+            .notification-close
+                | &times;
+            .notification-title
+            .notification-message
+        script(src='libs.js')
+        script(src='assets/jquery-ui.min.js')
+        script(src='app.js')

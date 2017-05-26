@@ -1,0 +1,52 @@
+- var personal = [{"name":"Name", "type":"text"}, {"name":"Lastname", "type":"text"}, {"name":"City", "type":"text"}, {"name":"Country", "type":"text"}, {"name":"Zip", "type":"text"}, {"name":"Email", "type":"email"}, {"name":"Birthday", "type":"text"}]
+- var attach = [{"name":"resume", "label":"Resume *", "required": "required"}, {"name":"portfolio", "label":"Portfolio"}, {"name":"photo", "label":"Photo"}];
+form.form(novalidate)
+    fieldset.form__fieldset.personal__detail
+        legend.form__legend
+            .form__legend_text
+                | Personal details *
+            each val in personal
+                .col-6
+                    .form__group
+                        input.form__control(id=val.name, placeholder=val.name, type=val.type, required)
+            .col-6
+                | Sex:
+                label.control.control--radio
+                    | Male
+                    input(type="radio", name="radio", id="Male", checked)
+                    .control__indicator
+                label.control.control--radio
+                    | Female
+                    input(type="radio", name="radio", id="Female")
+                    .control__indicator
+
+    .row
+        fieldset.form__fieldset.col-6
+            legend.form__legend
+                .form__legend_text
+                    | Your motivation *
+                .form__group
+                    textarea.form__textarea(id='text', required)
+        fieldset.form__fieldset.col-6
+            legend.form__legend
+                .form__legend_text
+                    | Attach your documents (pdf, doc(x), jpg max. 4 Mb)
+                each val in attach
+                    label.form__group.form__button
+                        .form__label-button
+                            =val.label
+                        .button
+                            | UPLOAD
+                        input(id=val.name, type='file', name='files[]', required=val.required)
+    .row
+        .col-6.form__back-link
+            a(href='#')
+                | <  Back to job description
+        .col-6
+            .form__finish-submit-element
+                label.control.control--checkbox
+                    | Send me a copy
+                    input(type="checkbox", name="checkbox", id="copy")
+                    .control__indicator
+                button(type=submit).button
+                    | Apply for this job

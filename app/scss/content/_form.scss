@@ -1,0 +1,255 @@
+.form {
+  @include clearfix;
+  font-size: 13px;
+  &__group {
+    width: 100%;
+    position: relative;
+    &.has-error {
+      .form__control,
+      .form__textarea {
+        border-color: #c80000;
+        color: #c80000;
+      }
+      .form__label-button {
+        color: #c80000;
+      }
+    }
+    &.has-success {
+      &:before {
+        content: $ionicon-var-android-done;
+        display: inline-block;
+        font-family: $ionicons-font-family;
+        position: absolute;
+        z-index: 1;
+        right: 14px;
+        font-size: 16px;
+        color: #003a60;
+        top: 12px;
+      }
+      &.form__button {
+        &:before {
+          right: 170px;
+        }
+      }
+    }
+  }
+  &__fieldset {
+    &.personal__detail {
+      .form__legend {
+        > .col-6 {
+          &:nth-child(2n+1) {
+            padding-left: 15px;
+            @include phone {
+              padding-left: 0;
+            }
+          }
+          &:nth-child(2n+2) {
+            padding-right: 15px;
+            @include phone {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__legend {
+    padding: 0 4px;
+  }
+  &__legend_text {
+    font-size: 16px;
+    line-height: 1.425;
+    margin-bottom: 20px;
+    @include MuseoSans(700);
+  }
+  &__control {
+    width: 100%;
+    height: 42px;
+    background-color: #FFFFFF;
+    padding: 16px 14px;
+    font-size: 13px;
+    color: #01385f;
+    border: 1px solid #e9e9e9;
+    margin-bottom: 18px;
+    position: relative;
+    @include MuseoSans(700);
+    &:active,
+    &:focus {
+      border: 1px solid #FFFFFF;
+      outline: none;
+    }
+    &.has-error {
+      border-color: #c80000;
+      color: #c80000;
+
+    }
+    @include placecolor(#aaaaaa);
+    &::-webkit-input-placeholder {
+      @include MuseoSans(500);
+    }
+    &:-moz-placeholder {
+      @include MuseoSans(500);
+    }
+    &::-moz-placeholder {
+      @include MuseoSans(500);
+    }
+    &:-ms-input-placeholder {
+      @include MuseoSans(500);
+    }
+  }
+  &__textarea {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 16px 14px;
+    font-size: 13px;
+    color: #01385f;
+    border: 1px solid #e9e9e9;
+    margin-bottom: 18px;
+    height: 140px;
+    outline: none;
+    &:active, &:focus {
+      border: 1px solid #FFFFFF;
+      outline: none;
+    }
+  }
+  &__button {
+    display: block;
+    @include clearfix;
+    margin-bottom: 20px;
+    .button {
+      float: right;
+    }
+  }
+  &__label-button {
+    float: left;
+    line-height: 40px;
+  }
+  &__finish-submit-element {
+    padding: 0 4px;
+    @include phone {
+      margin-bottom: 50px;
+    }
+    .control {
+      margin-left: -4px;
+    }
+    .button {
+      float: right;
+    }
+  }
+  &__back-link {
+    @include phone {
+      position: absolute;
+      top: 60px;
+    }
+  }
+  input[type='file'] {
+    display: none;
+  }
+  .ion-android-done {
+    display: none;
+  }
+  .row {
+    > .col-6 {
+      &:nth-child(2n+2) {
+        padding-left: 15px;
+        @include phone {
+          padding-left: 0;
+        }
+      }
+      &:nth-child(2n+1) {
+        padding-right: 15px;
+        @include phone {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+.control {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 13px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+  transition: all linear .2s;
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+// Custom control
+.control__indicator {
+  position: absolute;
+  top: 9px;
+  left: 4px;
+  height: 18px;
+  width: 18px;
+  background: $color--grey;
+  transition: all linear .2s;
+
+  .control--radio & {
+    border-radius: 50%; // Makes radio buttons circlular
+  }
+  // Hover and focus
+  .control:hover input ~ &,
+  .control input:focus ~ & {
+    background: $color--grey;
+  }
+  // Checked
+  .control input:checked ~ & {
+    background: $color--primary;
+  }
+  // Hover when checked
+  .control:hover input:not([disabled]):checked ~ &,
+  .control input:checked:focus ~ & {
+    background: $color--secondary;
+  }
+  // Hide default browser input
+  .control input:disabled ~ & {
+    background: $color--grey;
+    opacity: .6;
+    pointer-events: none;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    display: none; // Hide check
+
+    .control input:checked ~ & {
+      display: block; // Show check
+    }
+    // Checkbox tick
+    .control--checkbox & {
+      left: 7px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid $color--white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    // Disabled tick colour
+    .control--checkbox input:disabled ~ & {
+      border-color: $color--dark-grey;
+    }
+    // Radio button inner circle
+    .control--radio & {
+      left: 6px;
+      top: 6px;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: $color--white;
+    }
+    // Disabled circle colour
+    .control--radio input:disabled ~ & {
+      background: $color--dark-grey;
+    }
+  }
+}

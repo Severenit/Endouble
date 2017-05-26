@@ -1,0 +1,31 @@
+@mixin desktop {
+  @media (max-width: 1200px) {
+    @content
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 945px) {
+    @content
+  }
+}
+
+
+@mixin tablet {
+  @media (max-width: 769px) {
+    @content
+  }
+}
+
+
+@mixin phone {
+  @media (max-width: 737px) {
+    @content
+  }
+}
+
+@function em($target, $context: $base-font-size) {
+  @if $target == 0 {@return 0}
+  @return $target / $context + 0em;
+}
+

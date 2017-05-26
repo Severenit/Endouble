@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="assets/jquery-ui.css" rel="stylesheet" type="text/css">
+    <title>Purchasing assistant</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrap">
+        <div class="header__burger-menu">
+          <div class="header__burger-menu__burger"></div>
+        </div><a class="header__logo"><img src="img/logo.png" alt="LOGO" class="header__logo-img"></a>
+        <div class="header__overlay">
+          <ul class="header__menu-list">
+            <li class="header__menu-item">HOME</li>
+            <li class="header__menu-item">JOBS</li>
+            <li class="header__menu-item">ABOUT</li>
+            <li class="header__menu-item">DEPARTMENTS</li>
+            <li class="header__menu-item">CONTACT</li>
+          </ul>
+        </div>
+        <form class="header__form">
+          <label class="header__form-group">
+            <input placeholder="SEARCH FOR JOB BY KEYWORD" class="header__form-control">
+          </label>
+          <button class="header__form-button"><span class="ion-android-search"></span></button>
+        </form>
+      </div>
+    </header>
+    <section class="parallax__header">
+      <div class="parallax__wrap">
+        <div class="parallax__title">Purchasing assistant</div>
+        <div class="parallax__subtitle">Amsterdam, the Netherlands</div>
+      </div>
+      <div class="parallax__bg"></div>
+    </section>
+    <section class="wrap">
+      <h2 class="h2">Apply for the position of Purchasing assistant</h2>
+      <form novalidate class="form">
+        <fieldset class="form__fieldset personal__detail">
+          <legend class="form__legend">
+            <div class="form__legend_text">Personal details *</div>
+            <div class="col-6">
+              <div class="form__group">
+                <input id="Name" placeholder="Name" type="text" required class="form__control">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form__group">
+                <input id="Lastname" placeholder="Lastname" type="text" required class="form__control">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form__group">
+                <input id="City" placeholder="City" type="text" required class="form__control">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form__group">
+                <input id="Country" placeholder="Country" type="text" required class="form__control">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form__group">
+                <input id="Zip" placeholder="Zip" type="text" required class="form__control">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form__group">
+                <input id="Email" placeholder="Email" type="email" required class="form__control">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form__group">
+                <input id="Birthday" placeholder="Birthday" type="text" required class="form__control">
+              </div>
+            </div>
+            <div class="col-6">Sex:
+              <label class="control control--radio">Male
+                <input type="radio" name="radio" id="Male" checked>
+                <div class="control__indicator"></div>
+              </label>
+              <label class="control control--radio">Female
+                <input type="radio" name="radio" id="Female">
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+          </legend>
+        </fieldset>
+        <div class="row">
+          <fieldset class="form__fieldset col-6">
+            <legend class="form__legend">
+              <div class="form__legend_text">Your motivation *</div>
+              <div class="form__group">
+                <textarea id="text" required class="form__textarea"></textarea>
+              </div>
+            </legend>
+          </fieldset>
+          <fieldset class="form__fieldset col-6">
+            <legend class="form__legend">
+              <div class="form__legend_text">Attach your documents (pdf, doc(x), jpg max. 4 Mb)</div>
+              <label class="form__group form__button">
+                <div class="form__label-button">Resume *
+                </div>
+                <div class="button">UPLOAD</div>
+                <input id="resume" type="file" name="files[]" required="required">
+              </label>
+              <label class="form__group form__button">
+                <div class="form__label-button">Portfolio
+                </div>
+                <div class="button">UPLOAD</div>
+                <input id="portfolio" type="file" name="files[]">
+              </label>
+              <label class="form__group form__button">
+                <div class="form__label-button">Photo
+                </div>
+                <div class="button">UPLOAD</div>
+                <input id="photo" type="file" name="files[]">
+              </label>
+            </legend>
+          </fieldset>
+        </div>
+        <div class="row">
+          <div class="col-6 form__back-link"><a href="#"><  Back to job description</a></div>
+          <div class="col-6">
+            <div class="form__finish-submit-element">
+              <label class="control control--checkbox">Send me a copy
+                <input type="checkbox" name="checkbox" id="copy">
+                <div class="control__indicator"></div>
+              </label>
+              <button class="button">Apply for this job</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    <section class="parallax__sub">
+      <div class="faq">
+        <div class="faq__wrap row">
+          <div class="col-6">
+            <h2 class="h2">Application procedure</h2>
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Morbi dapibus sem et magna porta, a cursus justo eleifend.</li>
+              <li>Mauris nec elit sed lacus viverra blandit at ut erat.</li>
+              <li>Aenean sollicitudin lacus vel sem convallis semper.</li>
+            </ul>
+            <p><a href="#">Continue reading</a></p>
+          </div>
+          <div class="col-6">
+            <h2 class="h2">Got a question?</h2>
+            <p class="lead">Please contact recruitment</p>
+            <p>T. +31 20 123 456 78<br>Or send us an email</p>
+          </div>
+        </div>
+      </div>
+      <div class="parallax__bg"></div>
+    </section>
+    <footer class="footer">
+      <div class="footer__wrap"></div>
+    </footer>
+    <div class="notification">
+      <div class="notification-close">&times;</div>
+      <div class="notification-title"></div>
+      <div class="notification-message"></div>
+    </div>
+    <script src="libs.js"></script>
+    <script src="assets/jquery-ui.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
