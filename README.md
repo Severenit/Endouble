@@ -2,7 +2,8 @@
 ## Assignment
 Your assignment is to create an application page for one of Netwerven’s clients that features a form that will allow the applicant to enter his or her personal details, provide a motivational letter and upload his or her CV.
 ## Preinstall
-In this application, I use **Node.js** and **Express** as the server side. And **nodemailer** (https://nodemailer.com) as a mail client which will send an email to your mail. For ease of use, I will use Google account for sending letters. *
+In this application, I use **Node.js** and **Express** as the server side. And **nodemailer** (https://nodemailer.com) as a mail client which will send an email to your mail. For ease of use, I will use Google account for sending letters.
+
 Therefore, make sure that you have enabled which allows the use of your e-mail for unverified application at this link (https://myaccount.google.com/lesssecureapps)
 ## Install
 - First of all, `git clone` my app, and go this folder in your terminal
