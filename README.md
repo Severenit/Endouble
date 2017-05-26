@@ -4,14 +4,14 @@ Your assignment is to create an application page for one of Netwerven’s client
 ## Preinstall
 In this application, I use node.js as the server side. And nodemailer as a mail client which will send an email to your mail. For ease of use, I will use Google account for sending letters. 
 Therefore, make sure that you have enabled which allows the use of your e-mail for unverified application at this link (https://myaccount.google.com/lesssecureapps)
-##Install
+## Install
 - First of all, `git clone` my app, and go this folder in your terminal
 - Then, in terminal, run `npm install`
 - When all dependencies was installed, run the application simple command `npm run prod`
 - The terminal will ask you to enter your Google email and password, to connect to your mail when a letter is sent.
 - Then, navigate in the browser the link http://localhost:3000/
 - Enjoy!
-##Developer Mode
+## Developer Mode
 If you want to fix something in your code or see how to gather the project, you should enter the command `npm run dev`.
 Don't forget in your terminal set your Google email and password, to connect to your mail when a letter is sent.
 ## Technology
