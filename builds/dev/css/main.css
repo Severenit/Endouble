@@ -3943,6 +3943,10 @@ button,
   z-index: 1003;
   transform: translate3d(100%, -100%, 0) scale(0.5);
   transition: all linear .2s; }
+  @media (max-width: 737px) {
+    .notification {
+      right: 0;
+      top: 0; } }
   .notification.open {
     transform: translate3d(0%, 0%, 0) scale(1); }
   .notification .notification-close {
@@ -3955,7 +3959,8 @@ button,
     width: 18px;
     height: 18px;
     line-height: 15px;
-    text-align: center; }
+    text-align: center;
+    color: #fff; }
   .notification .notification-title,
   .notification .notification-message {
     color: #fff; }

@@ -34,8 +34,7 @@
     "formidable": "git+https://github.com/felixge/node-formidable.git#v1.0.17",
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
-    "nodemailer": "^4.0.1",
-    "nodemailer-smtp-transport": "^2.7.4"
+    "sendmail": "^1.1.1"
   },
   "browserify": {
     "transform": [

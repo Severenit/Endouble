@@ -4,25 +4,17 @@ const app = express();
 const path = require('path');
 const formidable = require('formidable');
 const fs = require('fs');
-const nodemailer = require('nodemailer');
-const smtpTransport = require('nodemailer-smtp-transport');
 const prompt = require('prompt');
-let auth = {}
-let transporter
+const sendmail = require('sendmail')({silent: true})
+let auth = {};
 let mailOptions = {};
 
 prompt.start();
 
-prompt.get(['user', 'pass'], function (err, result) {
+prompt.get(['email'], function (err, result) {
     auth = {
-        user: result.user,
-        pass: result.pass
+        email: result.email
     }
-
-    transporter = nodemailer.createTransport(smtpTransport({
-        service: 'gmail',
-        auth: auth
-    }));
 
     app.listen(3000, function(){
         console.log('Server start and listening on port 3000; http://localhost:3000/');
@@ -55,13 +47,19 @@ app.post('/upload', function(req, res){
     });
 
     form.parse(req, function ( err, field, files ) {
-        mailOptions.to = 'severenit@gmail.com';
+
+        mailOptions.from = auth.email || 'test@gmail.com';
 
         let html = '<ul>';
         const sex = field.male === 'true' ? 'Male' : 'Female';
-        const copy = field.copy === 'true' ?  mailOptions.to += ', '+field.email :  mailOptions.to;
 
-        mailOptions.to = copy;
+        mailOptions.to = auth.email;
+
+        if (field.copy === 'true' ) {
+            mailOptions.to += ', ' + field.email;
+        }
+        //
+        mailOptions.replyTo = field.email;
         mailOptions.subject = field.title;
 
         delete field.resume;
@@ -88,12 +86,10 @@ app.post('/upload', function(req, res){
         mailOptions.html = html;
         mailOptions.attachments = attachments;
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message %s sent: %s', info.messageId, info.response);
-        });
+        sendmail(mailOptions, function (err, reply) {
+            console.log(err && err.stack)
+            console.dir(reply)
+        })
         res.end('Message has been sent');
     });
 });
